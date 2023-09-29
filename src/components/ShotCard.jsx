@@ -11,8 +11,8 @@ const ShotCard = ({ shot }) => {
                     alt={shot.title}
                     className="w-full h-auto object-cover"
                 />
-                <div className='flex justify-between items-center'>
-                    <h3 className='text-3xl py-5 px-3'>{shot.title}</h3>
+                <div className='flex justify-between items-center px-5'>
+                    <h3 className='text-3xl py-5 '>{shot.title}</h3>
                     <RightArrowIcon />
                 </div>
             </div>
