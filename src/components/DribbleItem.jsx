@@ -8,7 +8,7 @@ const DribbleItem = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get('https://api.dribbble.com/v2/user/shots?access_token=5a198a358b4cddde4d2b6525fbc4ad6d7df63d59decc31039bc276d595e7fdf2')
+        axios.get('https://api.dribbble.com/v2/user/shots?access_token=5a198a358b4cddde4d2b6525fbc4ad6d7df63d59decc31039bc276d595e7fdf2&per_page=5')
             .then(response => {
                 setShots(response.data);
                 setLoading(false);
