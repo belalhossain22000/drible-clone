@@ -20,15 +20,20 @@ const DribbleItem = () => {
     }, []);
 
     return (
-        <div>
+        <div className='py-12'>
             {loading ? (
-               <Loader/>
+                <Loader />
             ) : (
-                <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5 container mx-auto'>
-                    {shots.map(shot => (
-                        <ShotCard key={shot.id} shot={shot} />
-                    ))}
-                </div>
+                <>
+                    <h1 className='text-center text-5xl py-12'>Dribble Items</h1>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3
+                 gap-5 container mx-auto'>
+
+                        {shots.map(shot => (
+                            <ShotCard key={shot.id} shot={shot} />
+                        ))}
+                    </div>
+                </>
             )}
         </div>
     );
