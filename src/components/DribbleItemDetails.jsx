@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Loader from "./Loader";
+import { Link } from 'react-router-dom';
 
 
 export const DribbleItemDetails = () => {
@@ -35,12 +36,12 @@ export const DribbleItemDetails = () => {
         fetchShot();
     }, [id, accessToken]);
     return (
-        <div className="bg-white shadow-md rounded-lg p-6 w-fit h-[100vh]  mx-auto my-10">
+        <div className={`bg-white shadow-md rounded-lg p-6  h-[100vh]  mx-auto my-10 ${isLoading ? 'w-full' : 'w-fit'}`}>
             {
                 isLoading ? <Loader /> : <div className="">
                     <div>
                         <img
-                            src={images?.normal} // Replace with your image URL
+                            src={images?.normal}
                             alt={title}
                             className="rounded-md w-auto h-[500px]"
                         />
@@ -49,6 +50,9 @@ export const DribbleItemDetails = () => {
                         <h2 className="text-4xl font-semibold mb-4">{title}</h2>
                         <p className="text-gray-600 mb-2 ">Published Date: {new Date(published_at).toLocaleDateString()}</p>
 
+                    </div>
+                    <div className="text-blue-500 hover:underline mb-10">
+                        <Link to="/">Back to home</Link>
                     </div>
                 </div>
             }
