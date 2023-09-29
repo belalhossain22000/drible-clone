@@ -35,14 +35,14 @@ export const DribbleItemDetails = () => {
         fetchShot();
     }, [id, accessToken]);
     return (
-        <div className="bg-white shadow-md rounded-lg p-6 max-w-[1000px] h-[100vh]  w-full mx-auto my-10">
+        <div className="bg-white shadow-md rounded-lg p-6 w-fit h-[100vh]  mx-auto my-10">
             {
                 isLoading ? <Loader /> : <div className="">
                     <div>
                         <img
                             src={images?.normal} // Replace with your image URL
                             alt={title}
-                            className="rounded-md w-full h-[500px]"
+                            className="rounded-md w-auto h-[500px]"
                         />
                     </div>
                     <div className="flex items-center justify-between py-10">
